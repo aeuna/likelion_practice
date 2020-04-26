@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1 id="title">자바스크립트</h1>
+    <p id="text"> </p>
+    <script>
+        let i = 0;
+        while(i<5){
+            i=i+1;
+            console.log(i);
+        }
+        let text = document.querySelector('#text')
+        for(let k = 10; k>0; k=k-1){
+            console.log(k);
+            text.innerHTML += k +'<br>';
+        }
+    </script>
+</body>
+</html>

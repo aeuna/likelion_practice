@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+    <style>
+        .click{
+            background: #404040;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">자바스크립트</h1>
+    <h2 id="bottom">간단한 버전</h2>
+    <script>
+        const bottom= document.querySelector('#bottom');
+        const newClass = "click";
+
+        function AtoBClass(){
+            bottom.classList.toggle(newClass);
+        };
+
+        function changeclass(){
+            bottom.addEventListener("click",AtoBClass);
+        }
+
+        changeclass();
+    </script>
+</body>
+</html>
+
+

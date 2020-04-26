@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1 id="title">자바스크립트</h1>
+    <h2 id="bottom">if-else 와 event가 만났어요</h2>
+    <script>
+        const title= document.querySelector('#title');
+        const BaseColor = "red";
+        const OtherColor = "blue";
+
+        function titleColorChange(){
+            const nowColor = title.style.color;
+            if(nowColor == BaseColor){
+                title.style.color = OtherColor;
+            }
+            else{
+                title.style.color = BaseColor;
+            }
+        }
+
+        function change(){
+            title.style.color=BaseColor;
+            title.addEventListener("click", titleColorChange);
+        }
+
+        change();
+    </script>
+</body>
+</html>
+
+

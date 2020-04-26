@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1>자바스크립트 스푼</h1>
+    <script>
+        let object = {
+            이름:"이은아",
+            성별:"여",
+            전공:"소프트",
+            좋아하는음식:["떡볶이","닭발"],
+            노래추천: [{가수:"아이유", 곡명:"블루밍"},
+                {가수:"지코", 곡명:"아무노래"}]
+        };
+        console.log(object);
+
+        object.성별 = "남";
+        console.log(object.성별);
+        console.log(object.노래추천[0]);
+        console.log(object.노래추천[0].곡명);
+
+        object.노래추천[1].가수 = "잇지";
+        object.노래추천[1].곡명 ="달라달라";
+        console.log(object.노래추천[1]);
+
+    </script>
+</body>
+</html>

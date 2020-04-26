@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1 id="top">자바스크립트</h1>
+    <h2 id="top">세번째세션</h2>
+    <h3 id="top">예제가 기다리고 있어요</h3>
+    <h4 id="top">샬라샬라</h1>
+
+    <script>
+        const Query = document.querySelector("#top");
+        console.log(Query);
+
+        Query.innerHTML = "javascript";
+        console.log(Query);
+
+        const QueryAll = document.querySelectorAll("#top");
+        console.log(QueryAll);
+
+        QueryAll[3].innerHTML = "구글은 모든것을 알고 있죠!";
+        console.log(QueryAll[3]);
+
+    </script>
+</body>
+</html>
+
+

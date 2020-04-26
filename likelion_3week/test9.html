@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 테스트 페이지</title>
+</head>
+<body>
+    <h1 id="top">자바스크립트</h1>
+    <h2 id="bottom">여기서 부터는 event를 다뤄볼게요</h2>
+
+    <script>
+        const h1Test = document.querySelector("#top");
+        function clickFunc(){
+            h1Test.style.color = "orange";
+        };
+        h1Test.addEventListener("click",clickFunc);
+
+        const h2Test = document.querySelector("#bottom");
+        function mouseEnterFunc(){
+            h2Test.style.color = "purple";
+        };
+        h2Test.addEventListener("mouseenter",mouseEnterFunc);
+        
+    </script>
+</body>
+</html>
+
+

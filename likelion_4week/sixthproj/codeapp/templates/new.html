@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'new' %}" enctype="multipart/form-data" method='POST'>
+        {% csrf_token %}
+        <p>이미지 이름</p>
+        <input type="text" name="name">
+        <p>이미지 설명</p>
+        <textarea cols=30 rows=1 name="description"></textarea>
+        <p>이미지 파일</p>
+        {{form.photo}}
+        <br/>
+        <br/>
+        <input type="submit" value="글쓰기">
+    </form>
+</body>
+</html>
+

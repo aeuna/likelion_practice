@@ -1,0 +1,9 @@
+{% load static %}
+<h1>hello</h1>
+<a href="{% url 'new' %}">새글쓰기</a>
+{% for i in imginfo.all %}
+    <div><img src="{{i.img.url}}" width="500" height="300"></div>
+    <div>{{i.img_name }}</div>
+    <div>{{i.img_description }}</div>
+    <a href = "{% url 'detail' i.id %}">상세보기</a>
+{% endfor %}

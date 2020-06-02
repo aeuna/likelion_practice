@@ -1,0 +1,50 @@
+{% load static %}
+
+<head> 
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+{% comment %} views파일에서 분리해서 가져오는 경우 {% endcomment %}
+{% for i in arr1 %}
+    <span class="name">{{ i }}</span>
+{% endfor %}
+<br>
+{% for i in arr2 %}
+    <span class="name">{{ i }}</span>
+{% endfor %}
+<br>
+{% for i in arr3 %}
+    <span class="name">{{ i }}</span>
+{% endfor %}
+<br>
+{% for i in arr4 %}
+    <span class="name">{{ i }}</span>
+{% endfor %}
+<br>
+{% for i in arr5 %}
+    <span class="name">{{ i }}</span>
+{% endfor %}
+
+
+<br><br><br>
+
+{% comment %} 템플릿에서 분리하는 경우 {% endcomment %}
+{% for i in range %}
+    {% with j=i|add:"-3"%}
+    {% with  str_j=j|stringformat:"s"%}
+    {% with k=str_j|add:":"%}
+    {% with  str_i=i|stringformat:"s"%}
+    {% with  articleSlice=k|add:str_i%}
+    {% for i in arr|slice:articleSlice%}
+      <span class="name">{{i}}</span>
+    {% endfor %}
+    <br>
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    
+{% endfor %}
+
+</body>

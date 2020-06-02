@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{content.channel_name}}</p>
+        <p>크리에이터 이름: <br> {{content.creator_name}}</p>
+        <p>구독자 수: <br> {{content.followers}}</p>
+        <p>추천별점 : <br>
+            {% if content.popularity == 1 %}
+            <span>&#11088;</span>
+            {% endif %}
+            {% if content.popularity == 2 %}
+            <span>&#11088;&#11088;</span>
+            {% endif %}
+            {% if content.popularity == 3 %}
+            <span>&#11088;&#11088;&#11088;</span>
+            {% endif %}
+            {% if content.popularity == 4 %}
+            <span>&#11088;&#11088;&#11088;&#11088;</span>
+            {% endif %}
+            {% if content.popularity == 5 %}
+                <span>&#11088;&#11088;&#11088;&#11088;&#11088;</span>
+            {% endif %} 
+        </p>
+        {% if content.onair == True %}
+        <p>Live on!</p>
+        {% else %}
+        <p>Live off!</p>
+        {% endif %}
+        <p>추천 영상</p>
+        <iframe src= "{{content.link1}}" style="width:31%; height:300px"></iframe>
+        <iframe src= "{{content.link2}}" style="width:31%; height:300px"></iframe>
+        <iframe src= "{{content.link3}}" style="width:31%; height:300px"></iframe>
+        <img src = {{content.photo.url}} >
+        <p>"{{content.summary}}"</p>
+        <h2>유투브 소개!</h2>
+        <p>{{content.text}}</p>
+
+</body>
+</html>

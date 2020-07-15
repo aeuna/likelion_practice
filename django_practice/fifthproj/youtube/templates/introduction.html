@@ -2,7 +2,7 @@
 {% load static %}
 
 <head> 
-    <link rel="stylesheet" href="../static/introduction.css">
+    <link rel="stylesheet" href="../static/introduction1.css">
 </head>
 
 {% for youtube in youtube.all%}
@@ -49,14 +49,18 @@
             <span>구독자 수:</span>
             <span>{{youtube.followers}}</span>
         </div> 
+        <div class="btn">
+            <a href="{% url 'detail' youtube.id %}">자세히 보기</a>
+        </div>
     </div>
-    <iframe src= "{{youtube.link1}}" style="width:31%; height:300px"></iframe>
-    <iframe src= "{{youtube.link2}}" style="width:31%; height:300px"></iframe>
-    <iframe src= "{{youtube.link3}}" style="width:31%; height:300px"></iframe>
-    <div class="btn">
-        <a href="{% url 'detail' youtube.id %}">자세히 보기</a>
+    <div class="youtube_links">
+        <iframe src= "{{youtube.link1}}" style="width:31%; height:300px"></iframe>
+        <iframe src= "{{youtube.link2}}" style="width:31%; height:300px"></iframe>
+        <iframe src= "{{youtube.link3}}" style="width:31%; height:300px"></iframe>
     </div>
 </div>
 <br><br>
 {% endfor %}
-<a href="{% url 'new' %}">추가하기</a>
+<div class="nav">
+    <a href="{% url 'new' %}">Add</a>
+</div>

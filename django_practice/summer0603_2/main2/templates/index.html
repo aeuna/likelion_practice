@@ -1,0 +1,18 @@
+{% load static %}
+<!--views에서 가져온 것은 Orders모델의 데이터뿐이고
+    memberName랑 home 은 Models모델안에 있지만
+    memberId 덕분에!
+    members 모델에 대한 것도 불러와 지고 있는 모습이다! -->
+
+
+<!-- {% for i in order_rows %}
+    <h3>{{i.orderId}}</h3>
+    <h3>{{i.memberId.memberName}} {{i.memberId.home}}</h3>
+{% endfor %} -->
+
+<h1>Sheets</h1>
+{% for i in sheet_rows %}
+    <h3>{{i.memberId.memberId}} {{i.memberId.memberName}} {{i.memberId.home}}</h3>
+    <h3>{{i.goodsId.goodsId}} {{i.goodsId.goodsName}} {{i.goodsId.goodsPrice}}</h3>
+    <h3>{{i.orderId.memberId}} {{i.orderId.orderId}}</h3>
+{% endfor %}

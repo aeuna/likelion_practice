@@ -5,30 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../static/new.css">
+
 </head>
 <body>
-    <form action= "{% url 'create' %}" method="POST">
-        {% csrf_token %}
-        <p>유투브 이름</p>
-        <input type ="text" name ="name">
-        <p>크리에이터 이름</p>
-        <input type ="text" name ="creator">
-        <p>구독자 수</p>
-        <input type ="integer" name ="subscribe_num">
-        <p>추천 영상 1</p>
-        <textarea cols=30 rows=1 name ="youtube_link_1"></textarea>
-        <p>추천 영상 2</p>
-        <textarea cols=30 rows=1 name ="youtube_link_2"></textarea>
-        <p>추천 영상 3</p>
-        <textarea cols=30 rows=1 name ="youtube_link_3"></textarea>
-        <p>유투브 요약</p>
-        <textarea cols=40 rows=3 name ="summary"></textarea>
-        <p>유투브 소개</p>
-        <textarea cols=100 rows=10 name ="text"></textarea>
-        <p>라이브 여부</p>
-        <p>예</p><input type ="radio" name ="choices" value="True">
-        <p>아니오</p><input type ="radio" name ="choices" value="False">
-        <input class="button" type="submit" value="작성하기">
-    </form>
+    <div class="container">
+        <div class="container_content">
+            <form action= "{% url 'create' %}" method="POST">
+                {% csrf_token %}
+                <p>유투브 이름</p>
+                <input type ="text" name ="name" placeholder="이름을 입력하세요.." required>
+                <p>크리에이터 이름</p>
+                <input type ="text" name ="creator" placeholder="크리에이터 이름을 입력하세요.." required>
+                <p>나의 선호도</p>
+                <input type="integer" name="popular" placeholder="선호도를 입력해주세요.." required>
+                <p>구독자 수</p>
+                <input type ="integer" name ="subscribe_num" placeholder="구독자 수를 입력해주세요.." required>
+                <p>추천 영상 1</p>
+                <textarea cols=30 rows=1 name ="youtube_link_1" placeholder="유투브 링크를 가져오세요.." required></textarea>
+                <p>추천 영상 2</p>
+                <textarea cols=30 rows=1 name ="youtube_link_2" placeholder="유투브 링크를 가져오세요.." required></textarea>
+                <p>추천 영상 3</p>
+                <textarea cols=30 rows=1 name ="youtube_link_3" placeholder="유투브 링크를 가져오세요.." required></textarea>
+                <p>유투브 요약</p>
+                <textarea cols=40 rows=3 name ="summary" placeholder="요약.." required></textarea>
+                <p>유투브 소개</p>
+                <textarea cols=100 rows=10 name ="text" placeholder="유투브소개.." required></textarea>
+                <p>라이브 여부</p>
+                <p>예</p><input type ="radio" name ="choices" value="True" required>
+                <p>아니오</p><input type ="radio" name ="choices" value="False" required>
+                <div class="button">
+                    <input type="submit" value="작성하기">
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

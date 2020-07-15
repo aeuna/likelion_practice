@@ -15,6 +15,7 @@ def create(request):
     youtube.channel_name = request.POST['name']
     youtube.creator_name = request.POST['creator']
     youtube.followers = request.POST['subscribe_num']
+    youtube.popularity = request.POST['popular']
     youtube.link1 = request.POST['youtube_link_1']
     youtube.link2 = request.POST['youtube_link_2']
     youtube.link3 = request.POST['youtube_link_3']

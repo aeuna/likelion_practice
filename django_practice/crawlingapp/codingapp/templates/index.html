@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'crolling' %}">가져오기</a>
+    {% for one in Melonlist.all%}
+    <h2>{{one.rank}}</h2>
+    <h2>{{one.songName}}</h2>
+    <h2>{{one.singerName}}</h2>
+    <img src="{{one.imgSrc}}">
+    {% endfor %}
+</body>
+</html>

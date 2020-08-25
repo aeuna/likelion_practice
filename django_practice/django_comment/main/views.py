@@ -4,6 +4,7 @@ from .forms import CommentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, redirect
 
 class IndexView(generic.ListView):
     template_name = 'home.html'
@@ -34,3 +35,31 @@ def comment_create(request, post_id):
     else:
         messages.info(request, "로그인이 필요합니다.")
     return HttpResponseRedirect(reverse('detail', args=(post_id,)))
+
+def comment_update(request, post_id, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user != comment.author:
+        messages.info(request, "권한 없음")
+        return HttpResponseRedirect(reverse('detail', args=(post_id,)))
+    if request.method == "POST":
+            form  = CommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                comment = form.save() #content내용을 넣는데 db에는 저장하지 말고 가지고 있어라
+                comment.save() #save함수는 commit=True가 default 
+                return HttpResponseRedirect(reverse('detail', args=(post_id,)))
+    else:
+        form = CommentForm(instance=comment)
+    return render(request,'update_form.html',{'post_id':post_id , 'comment_id' : comment_id, 'form':form})
+
+
+def comment_delete(request, post_id ,comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user != comment.author :
+        messages.info(request, '댓글 당사자가 아니라 삭제가 되지 않습니다')
+    else:
+        comment.delete()
+    return HttpResponseRedirect(reverse('detail', args=(post_id,)))
+
+    
+
+

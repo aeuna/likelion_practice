@@ -45,6 +45,10 @@
         <span>{{comment.author}}</span>
         <span>{{comment.created | date:'D d M Y' }}</span>
         <p>{{comment.content}}</p>
+        <a href="{% url 'comment_delete' ppost.id comment.id %}"> 삭제하기</a>
+        <a href="{% url 'comment_update' ppost.id comment.id %}"> 수정하기</a>
+        <br />
+        <br />
         {% endfor%}
       </div>
     </div>
